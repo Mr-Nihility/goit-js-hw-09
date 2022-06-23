@@ -26,6 +26,7 @@ flatpickr(date, {
       btn.disabled = true;
     } else {
       btn.disabled = false;
+      Notiflix.Notify.success('Lets go?');
     }
   },
 });
