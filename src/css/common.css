@@ -7,7 +7,7 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #ccc;
   color: #212121;
   line-height: 1.5;
 }
@@ -15,4 +15,83 @@ body {
 img {
   display: block;
   max-width: 100%;
+}
+#datetime-picker {
+  margin-bottom: 100px;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.field {
+  padding: 10px;
+  background-color: #000;
+  border: #212121 2px solid;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.value {
+  color: rgb(220, 98, 98);
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.label {
+  color: #fff;
+
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.value.end {
+  color: #fff;
+}
+button {
+  margin: 0 20px;
+  width: 11em;
+  height: 50px;
+  background: #d08770;
+  color: #eceff4;
+  text-transform: uppercase;
+  border: 0;
+  box-shadow: 12px 12px 1px 1px rgba(76, 86, 106, 0.2);
+}
+
+button:disabled {
+  margin: 0 20px;
+  background: #d8dee9;
+  color: #434c5e;
+  box-shadow: none;
+}
+
+input {
+  height: 50px;
+  text-align: center;
+  font-size: large;
+}
+
+.boxElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
