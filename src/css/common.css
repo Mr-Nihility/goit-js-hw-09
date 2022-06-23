@@ -49,10 +49,11 @@ img {
   color: #fff;
 }
 button {
+  border-radius: 8px;
   margin: 0 20px;
   width: 11em;
   height: 50px;
-  background: #d08770;
+  background: #05510f;
   color: #eceff4;
   text-transform: uppercase;
   border: 0;
@@ -70,6 +71,7 @@ input {
   height: 50px;
   text-align: center;
   font-size: large;
+  border-radius: 8px;
 }
 
 .boxElement {
