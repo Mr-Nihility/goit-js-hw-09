@@ -26,6 +26,7 @@ flatpickr(date, {
       btn.disabled = true;
     } else {
       btn.disabled = false;
+
       Notiflix.Notify.success('Lets go?');
     }
   },
@@ -36,19 +37,21 @@ btn.addEventListener('click', onBtnStartClick);
 function onBtnStartClick() {
   spans.forEach(item => item.classList.toggle('end'));
   btn.disabled = true;
+  date.disabled = true;
   timerId = setInterval(() => {
     const choosenDate = new Date(date.value);
     const timeToFinish = choosenDate - Date.now();
     const { days, hours, minutes, seconds } = convertMs(timeToFinish);
 
-    day.textContent = days < 10 ? '0' + days : days;
-    hour.textContent = hours < 10 ? '0' + hours : hours;
-    min.textContent = minutes < 10 ? '0' + minutes : minutes;
-    sec.textContent = seconds < 10 ? '0' + seconds : seconds;
+    day.textContent = addLeadingZero(days);
+    hour.textContent = addLeadingZero(hours);
+    min.textContent = addLeadingZero(minutes);
+    sec.textContent = addLeadingZero(seconds);
 
     if (timeToFinish < 1000) {
       spans.forEach(item => item.classList.toggle('end'));
       clearInterval(timerId);
+      date.disabled = false;
     }
   }, 1000);
 }
@@ -70,4 +73,8 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
+}
+
+function addLeadingZero(value) {
+  return `${value}`.padStart(2, '0');
 }

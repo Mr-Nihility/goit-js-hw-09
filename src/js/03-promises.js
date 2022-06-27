@@ -36,10 +36,8 @@ function createPromise(position, delay) {
 
     setTimeout(() => {
       if (shouldResolve) {
-        // Fulfill
         res({ position, delay });
       } else {
-        // Reject
         rej({ position, delay });
       }
     }, delay);
